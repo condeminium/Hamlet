@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://2oilososm2xm"]
 
 [ext_resource type="Texture2D" uid="uid://cpp4raw1bfkf5" path="res://assets/textures/world/ProtoWorld.png" id="1_f3sb7"]
-[ext_resource type="Script" uid="uid://df5w0phxgwv2s" path="res://world.gd" id="1_fj7yv"]
+[ext_resource type="Script" uid="uid://df5w0phxgwv2s" path="res://scripts/world.gd" id="1_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://ckltha4i2lgu3" path="res://hamster.tscn" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://dw6g6h78va0lu" path="res://food.tscn" id="4_aqk2v"]
 
