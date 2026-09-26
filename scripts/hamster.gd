@@ -29,7 +29,14 @@ func _physics_process(delta: float) -> void:
 		return
 	var current_agent_position = global_position
 	var next_path_position = navigation_agent_2d.get_next_path_position()
-	velocity = current_agent_position.direction_to(next_path_position) * SPEED
+	var new_velocity = current_agent_position.direction_to(next_path_position) * SPEED
 	move_and_slide()
-
 	
+	if navigation_agent_2d.avoidance_enabled:
+		navigation_agent_2d.set_velocity(new_velocity)
+	else:
+		_on_navigation_agent_2d_velocity_computed(new_velocity)		
+
+func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
+	velocity = safe_velocity
+	pass # Replace with function body.
