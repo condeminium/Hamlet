@@ -45,20 +45,25 @@ size = Vector2(32, 30)
 [node name="Hamster" type="CharacterBody2D" unique_id=1141713765]
 collision_layer = 2
 collision_mask = 4
+input_pickable = true
 script = ExtResource("1_s70uv")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=574759991]
 sprite_frames = SubResource("SpriteFrames_fnkj0")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.32051373
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1015030710]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_s70uv")
+frame_progress = 0.97316164
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1806431753]
 avoidance_enabled = true
 radius = 16.0
 
+[node name="Timer" type="Timer" parent="." unique_id=2101496855]
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1015030710]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_s70uv")
+
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
