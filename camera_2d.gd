@@ -23,13 +23,14 @@ func _apply_map_clamp() -> void:
 		global_position = terrain.clamp_world_pos_to_map(global_position, 0.0)
 
 func _process(delta: float) -> void:
-	var weight: float = clampf(1.0 - exp(-pan_smoothing * delta), 0.0, 1.0)
-	var desired_pos: Vector2 = get_global_mouse_position()
-	if clamp_to_map and terrain != null and terrain.has_method("clamp_world_pos_to_map"):
-		desired_pos = terrain.clamp_world_pos_to_map(desired_pos, 0.0)
+	if Input.is_action_pressed("camerapan"):
+		var weight: float = clampf(1.0 - exp(-pan_smoothing * delta), 0.0, 1.0)
+		var desired_pos: Vector2 = get_global_mouse_position()
+		if clamp_to_map and terrain != null and terrain.has_method("clamp_world_pos_to_map"):
+			desired_pos = terrain.clamp_world_pos_to_map(desired_pos, 0.0)
 
-	global_position = global_position.lerp(desired_pos, weight)
-	_apply_map_clamp()
+		global_position = global_position.lerp(desired_pos, weight)
+		_apply_map_clamp()
 
 	if Input.is_action_just_pressed("scroll up"):
 		zoom = (zoom + Vector2(zoom_step, zoom_step)).clamp(Vector2(min_zoom, min_zoom), Vector2(max_zoom, max_zoom))

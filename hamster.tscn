@@ -89,6 +89,9 @@ z_as_relative = false
 scale = Vector2(0.5, 0.5)
 collision_mask = 2
 script = ExtResource("1_s70uv")
+follow_cursor = null
+squish_speed = null
+squish_amount = null
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=844938339]
 shape = SubResource("RectangleShape2D_s70uv")

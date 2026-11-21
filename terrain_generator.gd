@@ -156,6 +156,12 @@ extends Node2D
 		if Engine.is_editor_hint() and auto_generate_in_editor and is_node_ready():
 			GenerateTerrain()
 
+@export var spawn_random_food: bool = false:
+	set(value):
+		spawn_random_food = value
+		if Engine.is_editor_hint() and auto_generate_in_editor and is_node_ready():
+			GenerateTerrain()
+
 @export var custom_scene: PackedScene
 @export var grass_anim: PackedScene
 
@@ -456,7 +462,7 @@ func GenerateTerrain() -> void:
 					add_child(grass)
 					grass.global_position = clamp_world_pos_to_map(world_pos, 4.0)
 
-				if custom_scene != null and rng.randi_range(0, 28) == 0:
+				if spawn_random_food and custom_scene != null and rng.randi_range(0, 28) == 0:
 					var instance := custom_scene.instantiate()
 					instance.add_to_group("spawned_prop")
 					add_child(instance)
@@ -474,6 +480,10 @@ func GenerateTerrain() -> void:
 		_place_entities_on_map()
 		_apply_camera_limits()
 		print("Map bounds: ", map_world_rect, " | grass: ", grass_count, " | mountains: ", mountain_count, " | food: ", food_count)
+	if not Engine.is_editor_hint():
+		var pf := get_tree().get_first_node_in_group("pathfinder")
+		if pf != null and pf.has_method("rebuild"):
+			pf.call("rebuild")
 
 func get_speed_multiplier_at(world_pos: Vector2) -> float:
 	if not is_world_pos_in_map(world_pos, 0.0):
