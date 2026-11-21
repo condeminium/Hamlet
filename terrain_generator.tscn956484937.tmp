@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://gmarwsjkduq8"]
+
+[ext_resource type="Script" uid="uid://d33l8bnd42sab" path="res://terrain_generator.gd" id="1_7468f"]
+[ext_resource type="Texture2D" uid="uid://dqqiq06fdf0kb" path="res://terrain_tileset-sheet.png" id="2_y7rda"]
+[ext_resource type="Texture2D" uid="uid://cgowuo73hh863" path="res://plants tilesheet.png" id="3_y7rda"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u438i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7rda"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7468f"]
+texture = ExtResource("2_y7rda")
+0:0/0 = 0
+0:0/0/material = SubResource("ShaderMaterial_u438i")
+1:0/0 = 0
+1:0/0/material = SubResource("ShaderMaterial_y7rda")
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+3:3/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3k665"]
+sources/0 = SubResource("TileSetAtlasSource_7468f")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y7rda"]
+texture = ExtResource("2_y7rda")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+3:3/0 = 0
+3:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+2:3/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4j02j"]
+sources/0 = SubResource("TileSetAtlasSource_y7rda")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vg2ls"]
+texture = ExtResource("3_y7rda")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7468f"]
+sources/0 = SubResource("TileSetAtlasSource_vg2ls")
+
+[node name="Terrain Generator" type="Node2D" unique_id=137918384]
+script = ExtResource("1_7468f")
+mapWidth = 256
+mapHeight = 256
+waterThreshold = -0.38
+water2Threshold = -0.505
+sandThreshold = -0.515
+grassThreshold = -0.635
+grass2Threshold = -0.735
+dirtThreshold = -0.8
+rockThreshold = -0.825
+snowThreshold = -0.95
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=846984564]
+top_level = true
+position = Vector2(2120, 1806)
+zoom = Vector2(0.135, 0.135)
+limit_enabled = false
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 648
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=1428564414]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_3k665")
+
+[node name="Mountain" type="TileMapLayer" parent="." unique_id=653991308]
+tile_set = SubResource("TileSet_4j02j")
+
+[node name="Plants" type="TileMapLayer" parent="." unique_id=456617330]
+tile_set = SubResource("TileSet_7468f")

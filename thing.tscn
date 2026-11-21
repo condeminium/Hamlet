@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://copnjkaqxblk6"]
+
+[ext_resource type="Texture2D" uid="uid://q8eumcnofgvy" path="res://Food.png" id="1_kx3x8"]
+[ext_resource type="Script" uid="uid://dye5rjn241ul7" path="res://thing.gd" id="2_kx3x8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kx3x8"]
+size = Vector2(10.591957, 6.3723955)
+
+[node name="Node2D" type="Sprite2D" unique_id=31584122 groups=["food"]]
+z_index = 300
+z_as_relative = false
+texture = ExtResource("1_kx3x8")
+script = ExtResource("2_kx3x8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=803137316 groups=["food"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=12512092]
+position = Vector2(0.014966965, 1.0276494)
+shape = SubResource("RectangleShape2D_kx3x8")

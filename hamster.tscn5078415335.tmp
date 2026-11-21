@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://7dxlxgmevjcq"]
+
+[ext_resource type="Script" uid="uid://dcdequvhvfsxi" path="res://hamster.gd" id="1_s70uv"]
+[ext_resource type="Texture2D" uid="uid://cuyfkqfurh4pb" path="res://Hamsters.png" id="1_ts32c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s70uv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n55pr"]
+atlas = ExtResource("1_ts32c")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uto4n"]
+atlas = ExtResource("1_ts32c")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tj1d0"]
+atlas = ExtResource("1_ts32c")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otlhq"]
+atlas = ExtResource("1_ts32c")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnkj0"]
+atlas = ExtResource("1_ts32c")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ps1r1"]
+atlas = ExtResource("1_ts32c")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cr02d"]
+atlas = ExtResource("1_ts32c")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvx2o"]
+atlas = ExtResource("1_ts32c")
+region = Rect2(544, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jny0q"]
+atlas = ExtResource("1_ts32c")
+region = Rect2(576, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61kg8"]
+atlas = ExtResource("1_ts32c")
+region = Rect2(608, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fys0y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n55pr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uto4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tj1d0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otlhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnkj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ps1r1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cr02d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvx2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jny0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61kg8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Hamster" type="CharacterBody2D" unique_id=555706834]
+script = ExtResource("1_s70uv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1497107083]
+shape = SubResource("RectangleShape2D_s70uv")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=983156901]
+sprite_frames = SubResource("SpriteFrames_fys0y")
+frame = 8
+frame_progress = 0.08548027
+
+[node name="Name" type="Label" parent="." unique_id=657106950]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.814518
+offset_top = 15.18401
+offset_right = 43.764484
+offset_bottom = 38.18401
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.646, 0.646)
+text = "Cheems"
+horizontal_alignment = 1
+
+[node name="Navigation" type="Node2D" parent="." unique_id=1385920436]
+
+[node name="Timer" type="Timer" parent="Navigation" unique_id=518795213]
+wait_time = 0.1
+autostart = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Navigation" unique_id=2015508988]
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(1, 0, 0.73333335, 1)
+
+[connection signal="timeout" from="Navigation/Timer" to="." method="_on_timer_timeout"]
+[connection signal="target_reached" from="Navigation/NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]

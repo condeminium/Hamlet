@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ckgy6b6innpqn"]
+
+[ext_resource type="Shader" uid="uid://dm6c0d8kq3lu0" path="res://sway.gdshader" id="1_vx73f"]
+
+[resource]
+shader = ExtResource("1_vx73f")
+shader_parameter/wind_start_threshold = 0.1
+shader_parameter/wind_end_threshold = 2.0
+shader_parameter/wind_end_threshold_2 = 0.1
+shader_parameter/wind_strength = 0.050000002375
+shader_parameter/wind_speed = 5.0
+shader_parameter/scale = 2.0

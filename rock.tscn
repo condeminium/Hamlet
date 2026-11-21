@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c2m6h0qftewep"]
+
+[ext_resource type="Texture2D" uid="uid://b2rptd7obhfa6" path="res://rock.png" id="1_o0qsl"]
+
+[node name="Rock" type="Node2D" unique_id=1676640296]
+z_index = 4
+z_as_relative = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1828497720]
+texture = ExtResource("1_o0qsl")
