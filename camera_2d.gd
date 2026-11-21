@@ -1,16 +1,37 @@
 extends Camera2D
 
+@export var pan_smoothing: float = 4.0
+@export var zoom_step: float = 0.25
+@export var min_zoom: float = 0.5
+@export var max_zoom: float = 4.0
+@export var clamp_to_map: bool = true
 
-# Called when the node enters the scene tree for the first time.
+@onready var terrain: Node = get_tree().get_first_node_in_group("terrain")
+
 func _ready() -> void:
-	pass # Replace with function body.
+	if terrain == null:
+		terrain = get_tree().get_first_node_in_group("terrain")
+	make_current()
+	_apply_map_clamp()
 
+func _apply_map_clamp() -> void:
+	if not clamp_to_map:
+		return
+	if terrain == null or not is_instance_valid(terrain):
+		terrain = get_tree().get_first_node_in_group("terrain")
+	if terrain != null and terrain.has_method("clamp_world_pos_to_map"):
+		global_position = terrain.clamp_world_pos_to_map(global_position, 0.0)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	global_position = lerp(global_position, get_global_mouse_position(),0.01)
+	var weight: float = clampf(1.0 - exp(-pan_smoothing * delta), 0.0, 1.0)
+	var desired_pos: Vector2 = get_global_mouse_position()
+	if clamp_to_map and terrain != null and terrain.has_method("clamp_world_pos_to_map"):
+		desired_pos = terrain.clamp_world_pos_to_map(desired_pos, 0.0)
+
+	global_position = global_position.lerp(desired_pos, weight)
+	_apply_map_clamp()
+
 	if Input.is_action_just_pressed("scroll up"):
-		zoom += Vector2(1,1)
+		zoom = (zoom + Vector2(zoom_step, zoom_step)).clamp(Vector2(min_zoom, min_zoom), Vector2(max_zoom, max_zoom))
 	elif Input.is_action_just_pressed("scroll down"):
-		zoom -= Vector2(1,1)
-	pass
+		zoom = (zoom - Vector2(zoom_step, zoom_step)).clamp(Vector2(min_zoom, min_zoom), Vector2(max_zoom, max_zoom))

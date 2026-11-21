@@ -1,13 +1,13 @@
+NavigationRegion2D
+Label
+Sprite2D
+Node2D
 Area2D
 CollisionShape2D
-Sprite2D
 AnimatedSprite2D
 Camera2D
-NavigationRegion2D
-Node2D
 Timer
 Node
 NavigationAgent2D
-Label
 CharacterBody2D
 TileMapLayer

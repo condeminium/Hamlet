@@ -1,26 +1,29 @@
 6d3b77f294a95ad2bb592a87da89201d
-::res://::1795277210
+::res://::1795282839
 ball.png::CompressedTexture2D::8276041625005884092::1792527813::1792527813::1::::<><><>0<>0<>3243fab476f3d9a0ffe217f2567aab55<>res://.godot/imported/ball.png-9a4ca347acb7532f6ae347744a6b04f7.ctex::
-camera_2d.gd::GDScript::5975738416309283239::1793495257::0::1::::<>Camera2D<><>0<>0<><>::
+camera_2d.gd::GDScript::5975738416309283239::1795281040::0::1::::<>Camera2D<><>0<>0<><>::
 cursor.tscn::PackedScene::2394387131279437993::1793494180::0::1::::<><><>0<>0<><>::uid://15d2thp6lmh6::::res://target.gd<>uid://dy5n5iusk3gfe::::res://target.png
 food manager.gd::GDScript::1922199329017979673::1795275780::0::1::::<>Node<><>0<>0<><>::
 Food.png::CompressedTexture2D::1191425181921038498::1793492307::1793492307::1::::<><><>0<>0<>2fee0f7b29b67aec59cef553061dddfb<>res://.godot/imported/Food.png-3e109b5688da038dc056c4d3016d0346.ctex::
 grass.png::CompressedTexture2D::5503416498213598021::1793471688::1793471690::1::::<><><>0<>0<>b9d30c385facd71b5ee8865c7d91d7df<>res://.godot/imported/grass.png-79cf597cc1adecdff9d12adae9606f9b.ctex::
 grass.tscn::PackedScene::8500178106577572069::1793473490::0::1::::<><><>0<>0<><>::uid://ckn5p3ksyyw4t::::res://grass.png<>uid://ckgy6b6innpqn::::res://wind sway.tres
-hamster.gd::GDScript::7306105395545316214::1795275946::0::1::::<>CharacterBody2D<><>0<>0<><>::
+hamster.gd::GDScript::7306105395545316214::1795280535::0::1::::<>CharacterBody2D<><>0<>0<><>::
 hamster.tscn::PackedScene::2253653482103084256::1795275780::0::1::::<><><>0<>0<><>::uid://dcdequvhvfsxi::::res://hamster.gd<>uid://cuyfkqfurh4pb::::res://Hamsters.png
 Hamsters.png::CompressedTexture2D::6226485598176525435::1792528139::1792528139::1::::<><><>0<>0<>207e0274e23d19ff62027348c100be81<>res://.godot/imported/Hamsters.png-32bd3f936ffba528f02a72ca8ec79f3d.ctex::
 icon.svg::CompressedTexture2D::4319779132295315157::1792527813::1792527813::1::::<><><>0<>0<>a6b573adc28975ad2f59f48e8a693c99<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+job.gd::GDScript::7139187237794241746::1795279764::0::1::::Job<>RefCounted<><>0<>0<><>::
+Main.tscn::PackedScene::445937137115901289::1795282792::0::1::::<><><>0<>0<><>::uid://d33l8bnd42sab::::res://terrain_generator.gd<>uid://jnc4d5u22e8d::::res://stockpile.gd<>uid://dqqiq06fdf0kb::::res://terrain_tileset-sheet.png<>uid://copnjkaqxblk6::::res://thing.tscn<>uid://cgowuo73hh863::::res://plants tilesheet.png<>uid://dtdsxrnwdwcdx::::res://grass.tscn<>uid://7dxlxgmevjcq::::res://hamster.tscn<>uid://15d2thp6lmh6::::res://target.gd<>uid://dy5n5iusk3gfe::::res://target.png<>uid://crexskxd18upr::::res://camera_2d.gd
 pathfinding.gd::GDScript::4943169697203508192::1793285759::0::1::::<>Node<><>0<>0<><>::
 plants tilesheet.png::CompressedTexture2D::5224247993532697318::1792527813::1792527813::1::::<><><>0<>0<>236a7123e491a718d66606062b715a09<>res://.godot/imported/plants tilesheet.png-5f42482f0abf362929bc5c7bebaf70c6.ctex::
 rock.png::CompressedTexture2D::4317558776356186555::1793491337::1793491337::1::::<><><>0<>0<>3befb68cfcae7656a17dd900b2568076<>res://.godot/imported/rock.png-2fd843802c09e25179696ea826da5ac7.ctex::
 rock.tscn::PackedScene::6694608744048263007::1793491798::0::1::::<><><>0<>0<><>::uid://b2rptd7obhfa6::::res://rock.png
-sway.gdshader::Shader::8065690172970145869::1795275780::0::1::::<><><>0<>0<><>::
+stockpile.gd::GDScript::658709930413882877::1795279708::0::1::::<>Node2D<><>0<>0<><>::
+sway.gdshader::Shader::8065690172970145869::1795281730::0::1::::<><><>0<>0<><>::
 target.gd::GDScript::1887072644105054757::1793493796::0::1::::<>Area2D<><>0<>0<><>::
 target.png::CompressedTexture2D::8906568977652182662::1793286649::1793286650::1::::<><><>0<>0<>3ac95af8222d090a6d4b645df12fcec6<>res://.godot/imported/target.png-2667dd4354be85d129752e593fce3c44.ctex::
-terrain_generator.gd::GDScript::9183079140959125905::1795275987::0::1::::<>Node2D<><>0<>1<><>::
-terrain_generator.tscn::PackedScene::445937137115901289::1793496170::0::1::::<><><>0<>0<><>::uid://d33l8bnd42sab::::res://terrain_generator.gd<>uid://dqqiq06fdf0kb::::res://terrain_tileset-sheet.png<>uid://cgowuo73hh863::::res://plants tilesheet.png<>uid://7dxlxgmevjcq::::res://hamster.tscn<>uid://crexskxd18upr::::res://camera_2d.gd<>uid://dy5n5iusk3gfe::::res://target.png<>uid://15d2thp6lmh6::::res://target.gd
+task_manager.gd::GDScript::8612298127343043609::1795279764::0::1::::<>Node<><>0<>0<><>::
+terrain_generator.gd::GDScript::9183079140959125905::1795282792::0::1::::<>Node2D<><>0<>1<><>::
 terrain_tileset-sheet.png::CompressedTexture2D::8315829263201490161::1792527813::1792527813::1::::<><><>0<>0<>4f866691386f751486afda2999dede6b<>res://.godot/imported/terrain_tileset-sheet.png-10ce5f68f601ddf794b27727b9b7b10a.ctex::
-thing.gd::GDScript::8853904171746860966::1795275887::0::1::::<>Sprite2D<><>0<>0<><>::
-thing.tscn::PackedScene::5787256763671916567::1795275946::0::1::::<><><>0<>0<><>::uid://q8eumcnofgvy::::res://Food.png<>uid://dye5rjn241ul7::::res://thing.gd
+thing.gd::GDScript::8853904171746860966::1795278040::0::1::::<>Sprite2D<><>0<>0<><>::
+thing.tscn::PackedScene::5787256763671916567::1795277391::0::1::::<><><>0<>0<><>::uid://q8eumcnofgvy::::res://Food.png<>uid://dye5rjn241ul7::::res://thing.gd
 wind sway.tres::ShaderMaterial::5488628738522003169::1793473490::0::1::::<><><>0<>0<><>::uid://dm6c0d8kq3lu0::::res://sway.gdshader
