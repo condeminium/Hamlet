@@ -1,5 +1,5 @@
 6d3b77f294a95ad2bb592a87da89201d
-::res://::1795276190
+::res://::1795277210
 ball.png::CompressedTexture2D::8276041625005884092::1792527813::1792527813::1::::<><><>0<>0<>3243fab476f3d9a0ffe217f2567aab55<>res://.godot/imported/ball.png-9a4ca347acb7532f6ae347744a6b04f7.ctex::
 camera_2d.gd::GDScript::5975738416309283239::1793495257::0::1::::<>Camera2D<><>0<>0<><>::
 cursor.tscn::PackedScene::2394387131279437993::1793494180::0::1::::<><><>0<>0<><>::uid://15d2thp6lmh6::::res://target.gd<>uid://dy5n5iusk3gfe::::res://target.png
